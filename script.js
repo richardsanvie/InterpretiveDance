@@ -7,25 +7,25 @@
 //     $('inputLine')
 // })
 
-        $(document).ready(function() {
-            $("#plus").click(function() {
-                $('<tr><td scope="checklist"><div class="input-group"><div class="input-group-text"><input type="checkbox" id="inputChecked"></div><input type="text" class="form-control" id="inputLine" placeholder="Your task here"></div></td></tr>').appendTo("tbody");
-            });
-            
-            $("tbody").on("click", "#inputChecked", function() {
-                $(this).parents("tr").find("#inputLine").toggleClass("texto-riscado");
-            });
-
+    $(document).ready(function() {
+        $("#plus").click(function() {
+            $('<tr><td scope="checklist"><div class="input-group"><div class="input-group-text"><input type="checkbox" id="inputChecked"></div><input type="text" class="form-control" id="inputLine" placeholder="Your task here"></div></td></tr>').appendTo("tbody");
         });
-                
-        // $("tbody").on("click", ".inputChecked", function() {
-        //     $(".inputLine").toggleClass("texto-riscado");
-        // });
+        
+        $("tbody").on("click", "#inputChecked", function() {
+            $(this).parents("tr").find("#inputLine").toggleClass("lineThrough");
+        });
 
-        // $(".inputChecked").click(function() {
-        //     $(".inputLine").toggleClass("texto-riscado");
-        //    // alert('dldklkld')
-        // });
+    });
+                
+    // $("tbody").on("click", ".inputChecked", function() {
+    //     $(".inputLine").toggleClass("texto-riscado");
+    // });
+
+    // $(".inputChecked").click(function() {
+    //     $(".inputLine").toggleClass("texto-riscado");
+    //    // alert('dldklkld')
+    // });
 
     
     
