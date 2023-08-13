@@ -1,71 +1,43 @@
-<!doctype html>
-<html lang="pt-BR">
-
+<!DOCTYPE html>
+<html>
 <head>
-    <title>Cadastro de contatos</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="style2.css">
-
+    <title>Dynamic Table Row</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .texto-riscado {
+            text-decoration: line-through;
+        }
+    </style>
 </head>
-
 <body>
-    <div class="container bg-container">
-        <div class="align-items-center justify-content-center d-flex row">
-            <div class="col-12 col-md-6" id="container">
-                <div class="container mb-3">
-                    <h4>User registration</h4>
-                    <form action="" onsubmit="return validateForm()" id="form">
-                        <div class="form-floating mb-3 text-muted">
-                            <input class="form-control" placeholder="#" id="name" type="text" required>
-                            <label for="Name">Name:</label>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <div>
+                        <div>
+                            <input type="checkbox" id="inputChecked">
                         </div>
-                        <div class="form-floating mb-3 text-muted">
-                            <input type="number" class="form-control" name="cellphone" id="cellphone" placeholder="#"
-                                required>
-                            <label for="cellphone">cellphone:</label>
-                        </div>
-                        <button type="submit" class="btn btn-outline-info">Register</button>
+                        <input type="text" class="form-control" id="inputLine" placeholder="Your task here">
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <button id="plus">Add</button>
 
-                    </form>
-                </div>
-            </div>
-            <div class="col-12 col-md-6" id="container">
-                    <table class="table text-light">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>cellphone</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="">
-                                <td scope="row">
-                                    <p id="listName"></p>
-                                </td>
-                                <td>
-                                    <p id="listCellphone"></p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+    <script>
+        $(document).ready(function() {
+            $("#plus").click(function() {
+                $('<tr><td><div><div><input type="checkbox" id="inputChecked"></div><input type="text" class="form-control" id="inputLine" placeholder="Your task here"></div></td></tr>').appendTo("tbody");
+            });
+            
+            $("tbody").on("click", "#inputChecked", function() {
+                $(this).parents("tr").find("#inputLine").toggleClass("texto-riscado");
+            });
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-    </script>
-    <!-- <script src="script.js"></script> -->
 </body>
-
 </html>

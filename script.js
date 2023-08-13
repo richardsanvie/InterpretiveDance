@@ -1,30 +1,60 @@
-// function validateForm(){
-//     let value = document.forms["name"]["cellphone"].value;
-//     if (value == ""){
-//         alert("skskk");
-//         return false;
-//     }
-// }
-    let linhas = '';
-    const form = document.getElementById('form');
-    form.addEventListener('submit', function(e){
-        e.preventDefault();
+// $(document).ready(function() {
+//     console.log(document.querySelector('#inputChecked')); 
+//     console.log($('#inputChecked')); 
+// });
+
+// $('#inputChecked').click(function(){
+//     $('inputLine')
+// })
+
+        $(document).ready(function() {
+            $("#plus").click(function() {
+                $('<tr><td scope="checklist"><div class="input-group"><div class="input-group-text"><input type="checkbox" id="inputChecked"></div><input type="text" class="form-control" id="inputLine" placeholder="Your task here"></div></td></tr>').appendTo("tbody");
+            });
+            
+            $("tbody").on("click", "#inputChecked", function() {
+                $(this).parents("tr").find("#inputLine").toggleClass("texto-riscado");
+            });
+
+        });
+                
+        // $("tbody").on("click", ".inputChecked", function() {
+        //     $(".inputLine").toggleClass("texto-riscado");
+        // });
+
+        // $(".inputChecked").click(function() {
+        //     $(".inputLine").toggleClass("texto-riscado");
+        //    // alert('dldklkld')
+        // });
+
+    
+    
+    
+    
+
+    
+
+
+    // let linhas = '';
+    // const form = document.getElementById('form');
+    // form.addEventListener('submit', function(e){
+    //     e.preventDefault();
 
         
-    // function adicaoDeNome(name, cellphone){
-        const inputName = document.getElementById('name');
-        const inputCellphone = document.getElementById('cellphone');
+    // // function adicaoDeNome(name, cellphone){
+    //     const inputName = document.getElementById('name');
+    //     const inputCellphone = document.getElementById('cellphone');
         
-        // alert(`${inputName.value} / ${inputCellphone.value}`);
-        let linha = ' <tr>';
-        linha += `<td>${inputName.value}</td>`;
-        linha += `<td>${inputCellphone.value}</td>`;
-        linha += `<tr>`;
-        linhas += linha;
+    //     // alert(`${inputName.value} / ${inputCellphone.value}`);
+    //     let linha = ' <tr>';
+    //     linha += `<td>${inputName.value}</td>`;
+    //     linha += `<td>${inputCellphone.value}</td>`;
+    //     linha += `<tr>`;
+    //     linhas += linha;
 
-        const corpoTabela = document.querySelector('tbody');
-        corpoTabela.innerHTML = linhas;
-    });
+    //     const corpoTabela = document.querySelector('tbody');
+    //     corpoTabela.innerHTML = linhas;
+    // });
 
 
 // function myFunction() {

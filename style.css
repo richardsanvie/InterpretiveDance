@@ -1,22 +1,18 @@
-    body,
-    html {
-        height: 100%;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
 
-    body {
-        background-color: #f5f5f5;
+    body,
+    html {
+        height: 100%;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
-    #container {
-        border-radius: 6px;
+    .bg-container{
         padding: 20px;
+        border-radius: 6px;
     }
 
     table {
@@ -25,16 +21,23 @@
         color: #f5f5f5;
     }
 
+    td,
+    th {
+        border: none;
+
+    }
+
     .bg-container {
         color: #f5f5f5;
-        width: 800px;
+        width: 400px;
         position: fixed;
         transform: translate(-50%, -50%);
         top: 50%;
         left: 50%;
         z-index: 2;
-        background-color: rgba(0, 0, 0, 0.7);
+        background-color: rgba(0, 0, 0, 0.8);
         border: 1px solid #efefef;
+        border-radius: 18px;
     }
 
     body,
@@ -42,8 +45,11 @@
         height: 100%;
     }
 
-    .parallax {
-        background-image: url("./image/luke-witter-6c90hRXZs1o-unsplash.webp");
+    .parallax,
+    .parallax4,
+    .parallax5,
+    .parallax3,
+    .parallax2 {
         height: 100%;
         background-attachment: fixed;
         background-position: center;
@@ -51,47 +57,37 @@
         background-size: cover;
     }
 
+    .parallax {
+        background-image: url("./image/luke-witter-6c90hRXZs1o-unsplash.webp");
+    }
+
     .parallax4 {
         background-image: url("./image/felix-fuchs-oAeEh74WVXY-unsplash.webp");
-        min-height: 100%;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
     }
 
     .parallax5 {
         background-image: url("./image/luke-witter-6c90hRXZs1o-unsplash.webp");
-        min-height: 100%;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
     }
 
-
     .parallax3 {
-        background-image: url("./image/brad-fickeisen-hW-422SNyK4-unsplash.webp");
-        min-height: 100%;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-image: url("./image/yoav-aziz-tKCd-IWc4gI-unsplash.jpg");
     }
 
     .parallax2 {
         background-image: url("./image/denys-nevozhai-D68ADLeMh5Q-unsplash.webp");
-        min-height: 100%;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
     }
 
+    .texto-riscado {
+        text-decoration: line-through;
+    }
 
     @media screen and (max-width: 640px) {
         .bg-container {
             width: 100%;
-            border: 0;
         }
+
+    }
+
+    .table>:not(caption)>*>* {
+        padding: 2px;
     }
